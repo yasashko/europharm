@@ -20,7 +20,7 @@ from utility import SMILE
 
 
 def sms(bot, update):
-    smile = emojize(choice(SMILE), use_aliases=True)
+    # smile = emojize(choice(SMILE), use_aliases=True)
     print('Кто-то отправил команду НАЧАТЬ. Что мне делать?') #вывод сообщения в консоль при отправке команды /start
     bot.message.reply_text('Здравствуйте, {}! \nНажмите'
                            .format(bot.message.chat.first_name), reply_markup=get_keyboard()) # отправим ответ

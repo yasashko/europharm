@@ -1,4 +1,4 @@
-settings.py
+europharm_venv/settings.py
 .idea/
 __pycache__/
 *.log
