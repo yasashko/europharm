@@ -1,3 +1,4 @@
+from mongodb import mdb, search_or_save_user
 from bs4 import BeautifulSoup
 from glob import glob
 from random import choice
@@ -20,7 +21,10 @@ from utility import SMILE
 
 
 def sms(bot, update):
-    # smile = emojize(choice(SMILE), use_aliases=True)
+    user = search_or_save_user(mdb,bot.effective_user, bot.message)
+    print(user)
+
+    smile = emojize(choice(SMILE), use_aliases=True)
     print('Кто-то отправил команду НАЧАТЬ. Что мне делать?') #вывод сообщения в консоль при отправке команды /start
     bot.message.reply_text('Здравствуйте, {}! \nНажмите'
                            .format(bot.message.chat.first_name), reply_markup=get_keyboard()) # отправим ответ
